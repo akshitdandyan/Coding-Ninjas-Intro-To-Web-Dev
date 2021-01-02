@@ -1,0 +1,77 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: arial;
+    background: skyblue;
+}
+#header{
+    background: linear-gradient(45deg,cyan,pink);
+    width: 80%;height: 150px;
+    position: relative;left: 10%;
+    text-align: center;
+}
+h2{
+    color: white;
+    position: relative;
+    top: 20px;
+    letter-spacing: 10px;
+}
+input,button{
+    position: absolute;
+    bottom:20px;
+}
+input{
+    border-radius: 10px;
+    border: 2px rgb(31, 231, 231) solid;
+    height: 30px;
+    outline: none;
+    box-shadow: 0px 0px 5px 1px white;
+    left: 10%;
+    font-size: 20px;
+    font-weight: bold;
+    width:30% ;
+}
+button{
+    right: 10%;
+    height: 30px;
+    padding: 5px;
+    border: 1px black solid;outline: none;
+    box-shadow: 0px 0px 7px 3px white;
+    font-weight: bold;
+}
+button:hover{box-shadow: none;transition: 0.3s;}
+#counter{
+    background: rgb(111, 107, 107);
+    width: 60%;
+    height: 100px;
+    position: relative;
+    left: 20%;top: 30px;
+    display: inline-flex;
+    justify-content: space-around;
+}
+#counter div{
+    background: white;
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    margin-top: 25px;
+    text-align: center;
+    overflow: hidden;
+}
+p{
+    font-size: 40px;
+    font-weight: bold;
+    border-top: 2px black solid;
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+}
+p.sec{
+    position: relative;
+    top: 0px;
+}
+p.animate{
+    transition: all 0.5s;
+    top: -50px;
+}
