@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Playlist Screen</title>
+    <script src="scripts/script.js"></script>
+    <link rel="stylesheet" href="cnStudioStyles.css">
+    <link rel="stylesheet" href="responsiveCSS.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="singleplaylistCSS.css">
+</head>
+<body>   <div id="main">
+        <!-- header starts here -->
+        <div id="header">
+            <!-- menu bars --><div class="menu" onclick="menuOpen()"><i class="fa fa-bars" aria-hidden="true"></i></div>
+            <!-- logo -->
+            <span><a href="index.html"><img src="images/logo.png" alt="CN-Studio-Logo"  id="logo"></a></span>
+            <!-- favourites section -->
+            <span id="fvrt">Favourites</span>
+            <!-- search -->
+            <i class="fa fa-search icon search" aria-hidden="true"></i>
+            <input type="text" id="searchsongs" placeholder="Search">
+            <i class="fa fa-microphone icon mic" aria-hidden="true"></i>
+            <!-- notifications -->
+            <i class="fa fa-bell icon bell" aria-hidden="true" title="Notifications"></i>
+            <!-- account-dp -->
+            <img src="images/dp.jpeg" alt="profile picture" class="dp" title="See your profile">
+        </div>
+        <!-- header ends here -->
+        
+        <!-- bottom music player starts here -->
+            <!-- bottom music player -->
+    <div id="bottom-music-player">
+        <div class="song-info">
+            <div class="current-song-poster">
+                <img src="images/gr.jpg" alt="current-song-poster">
+                <span class="song-name">Welcome To...
+                    <i class="fa fa-heart-o song-info-icon add-to-fvrt" aria-hidden="true"></i>
+                    <i class="fa fa-ban song-info-icon block" aria-hidden="true"></i>
+                </span>
+                <span class="singer-name">Guns N Roses</span>
+            </div>
+        </div>
+        <div class="song-controls">
+            <i class="fa fa-random" aria-hidden="true"></i>
+            <i class="fa fa-step-backward" aria-hidden="true"></i>
+            <i class="fa fa-pause pause" id="pauseP" aria-hidden="true" onclick="pause()" ></i>
+            <i class="fa fa-play play" id="playP"  aria-hidden="true" onclick="play()"></i>
+            <i class="fa fa-step-forward" aria-hidden="true" onclick="next()"></i>
+            <i class="fa fa-retweet" aria-hidden="true"></i>
+        </div>
+        <input type="range" id="songSlider" class="slider">
+        <div class="song-duration"> <d1>1:14</d1><d2>3:02</d2></div>
+        <div class="audio-controls">
+            <i class="fa fa-list-ul" aria-hidden="true"></i>
+            <i class="fa fa-building" aria-hidden="true"></i>
+            <i class="fa fa-volume-up" aria-hidden="true"></i>
+            <input type="range" id="audioSlider" class="slider">
+            <i class="fa fa-expand" aria-hidden="true"></i>
+        </div>
+    </div>
+    <!-- bottom music player ends here -->
+    <div id="temp"></div>
+    <!-- current playlist overview starts here -->
+    <div id="currentPlaylist">
+        <img src="images/gunsandroses.jpg" id="currentPlaylistImage">
+        <follower class="currentPlaylistBtn">1452 Followers &nbsp;<i class="fa fa-plus" aria-hidden="true" style="color: red;"></i></follower>
+        <button id="playAll" class="currentPlaylistBtn">PLAY ALL <i class="fa fa-play-circle-o" aria-hidden="true"></i></button>
+        <work class="currentPlaylistBtn">189 Tracks|29 Albums</work>
+        <div id="aboutCurrentPlaylist">
+            <currentPlayListName>GUNS AND ROSES</currentPlayListName>
+            <origin>Los Angeles, U.S.</origin>
+            <brief>
+                Guns N' Roses, often abbreviated as GNR, is an American hard rock band from Los Angeles, 
+                California, formed in 1985. When they signed to Geffen Records in 1986, the band comprised 
+                vocalist Axl Rose, lead guitarist Slash, rhythm guitarist Izzy Stradlin, bassist Duff McKagan, 
+                and drummer Steven Adler. The current lineup consists of Rose, Slash, McKagan, guitarist Richard 
+                Fortus, drummer Frank Ferrer and keyboardists Dizzy Reed and Melissa Reese.
+            </brief>
+        </div>
+    </div>
+    <!-- current playlist overview ends here -->
+
+    <!-- tracks section starts here -->
+    <div id="tracks">
+        <div><span class="trackSrNo">01</span>
+            <span class="trackImage"><img src="images/gr.jpg"></span>
+                <span class="trackInfo">
+                    <p class="trackName">Welcome To The Jungle</p>
+                    <p class="trackSinger">Guns And Roses</p>
+                </span>
+                <span class="addToQIcons">
+                    <i class="ww fa fa-heart-o" aria-hidden="true"></i>
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                </span>
+        </div>
+        <div><span class="trackSrNo">02</span>
+            <span class="trackImage"><img src="images/gr.jpg"></span>
+                <span class="trackInfo">
+                    <p class="trackName">November Rain</p>
+                    <p class="trackSinger">Guns And Roses</p>
+                </span>
+                <span class="addToQIcons">
+                    <i class="ww fa fa-heart-o" aria-hidden="true"></i>
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                </span>
+        </div>
+        <div><span class="trackSrNo">03</span>
+            <span class="trackImage"><img src="images/gr.jpg"></span>
+                <span class="trackInfo">
+                    <p class="trackName">Sweet Child O' Mine</p>
+                    <p class="trackSinger">Guns And Roses</p>
+                </span>
+                <span class="addToQIcons">
+                    <i class="ww fa fa-heart-o" aria-hidden="true"></i>
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                </span>
+        </div>
+        <div><span class="trackSrNo">04</span>
+            <span class="trackImage"><img src="images/gr.jpg"></span>
+                <span class="trackInfo">
+                    <p class="trackName">Rocket Queen</p>
+                    <p class="trackSinger">Guns And Roses</p>
+                </span>
+                <span class="addToQIcons">
+                    <i class="ww fa fa-heart-o" aria-hidden="true"></i>
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                </span>
+        </div>
+        <div><span class="trackSrNo">05</span>
+            <span class="trackImage"><img src="images/gr.jpg"></span>
+                <span class="trackInfo">
+                    <p class="trackName">It's So Easy</p>
+                    <p class="trackSinger">Guns And Roses</p>
+                </span>
+                <span class="addToQIcons">
+                    <i class="ww fa fa-heart-o" aria-hidden="true"></i>
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                </span>
+        </div>
+        <div><span class="trackSrNo">06</span>
+            <span class="trackImage"><img src="images/gr.jpg"></span>
+                <span class="trackInfo">
+                    <p class="trackName">Patience</p>
+                    <p class="trackSinger">Guns And Roses</p>
+                </span>
+                <span class="addToQIcons">
+                    <i class="ww fa fa-heart-o" aria-hidden="true"></i>
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                </span>
+        </div>
+        <div><span class="trackSrNo">07</span>
+            <span class="trackImage"><img src="images/gr.jpg"></span>
+                <span class="trackInfo">
+                    <p class="trackName">Paradise City</p>
+                    <p class="trackSinger">Guns And Roses</p>
+                </span>
+                <span class="addToQIcons">
+                    <i class="ww fa fa-heart-o" aria-hidden="true"></i>
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                </span>
+        </div>
+        <div><span class="trackSrNo">08</span>
+            <span class="trackImage"><img src="images/gr.jpg"></span>
+                <span class="trackInfo">
+                    <p class="trackName">Mr. Brownstone</p>
+                    <p class="trackSinger">Guns And Roses</p>
+                </span>
+                <span class="addToQIcons">
+                    <i class="ww fa fa-heart-o" aria-hidden="true"></i>
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                </span>
+        </div>
+        <div><span class="trackSrNo">09</span>
+            <span class="trackImage"><img src="images/gr.jpg"></span>
+                <span class="trackInfo">
+                    <p class="trackName">Don't Cry</p>
+                    <p class="trackSinger">Guns And Roses</p>
+                </span>
+                <span class="addToQIcons">
+                    <i class="ww fa fa-heart-o" aria-hidden="true"></i>
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                </span>
+        </div>
+        <div><span class="trackSrNo">10</span>
+            <span class="trackImage"><img src="images/gr.jpg"></span>
+                <span class="trackInfo">
+                    <p class="trackName">Civil War</p>
+                    <p class="trackSinger">Guns And Roses</p>
+                </span>
+                <span class="addToQIcons">
+                    <i class="ww fa fa-heart-o" aria-hidden="true"></i>
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                </span>
+        </div>
+        <div><span class="trackSrNo">11</span>
+            <span class="trackImage"><img src="images/gr.jpg"></span>
+                <span class="trackInfo">
+                    <p class="trackName">Nightrain</p>
+                    <p class="trackSinger">Guns And Roses</p>
+                </span>
+                <span class="addToQIcons">
+                    <i class="ww fa fa-heart-o" aria-hidden="true"></i>
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                </span>
+        </div>
+        <div><span class="trackSrNo">12</span>
+            <span class="trackImage"><img src="images/gr.jpg"></span>
+                <span class="trackInfo">
+                    <p class="trackName">Estranged</p>
+                    <p class="trackSinger">Guns And Roses</p>
+                </span>
+                <span class="addToQIcons">
+                    <i class="ww fa fa-heart-o" aria-hidden="true"></i>
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                </span>
+        </div>
+    </div>
+    <!-- tracks section ends here -->
+</div>
+    <!-- aside section starts here -->
+    <aside id="aside">
+        <div id="similarArtists">
+            <sa>Similar Artists</sa> <viewall>View All</viewall>
+            <div class="simArt">
+                <img src="images/glrsSons.jpg">
+                <span><p3>Glorious Sons</p3><p4>Pop Band</p4></span>
+                <span><moreoptions><i class="fa fa-ellipsis-h" aria-hidden="true"></i><br><songLength>4:44</songLength></moreoptions></span>
+            </div>
+            <div class="simArt">
+                <img src="images/fallenState.jpg">
+                <span><p3>Glorious Sons</p3><p4>Pop Band</p4></span>
+                    <moreoptions><i class="fa fa-ellipsis-h" aria-hidden="true"></i><br><songLength>4:44</songLength></moreoptions>
+            </div>
+            <div class="simArt">
+                <img src="images/larkinPoe.jpg">
+                <span><p3>Glorious Sons</p3><p4>Pop Band</p4></span>
+                    <moreoptions><i class="fa fa-ellipsis-h" aria-hidden="true"></i><br><songLength>4:44</songLength></moreoptions>
+            </div>
+        </div>
+        <div id="recentlyPlayed">
+            <sa>Recently Played</sa> <viewall>View All</viewall>
+            <table id="RP">
+                <tr>
+                    <td class="q-ele">01
+                        <img src="images/bob-marley.jpeg">
+                        <song-name>Is This Love</song-name>
+                        <i class="ww fa fa-heart-o addtofvrtq" aria-hidden="true" onclick="addtofvrt()"></i>
+                        <i class="fa fa-heart addedtofvrtq" aria-hidden="true" onclick="addedtofvrt()"></i> <br>
+                        <singer-name>Bob Marley</singer-name>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="q-ele" onclick="lowlife()">02
+                        <img src="images/poppy.jpg">
+                        <song-name>Lowlife</song-name>
+                        <i class="fa fa-heart-o addtofvrtq" aria-hidden="true" onclick="addtofvrt2()"></i>
+                        <i class="fa fa-heart addedtofvrtq" aria-hidden="true" onclick="addedtofvrt2()"></i><br>
+                        <singer-name>Poppy</singer-name>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="q-ele">03
+                        <img src="images/eng3-slowdown.jpg">
+                        <song-name>Slow Down</song-name>
+                        <i class="fa fa-heart-o addtofvrtq" aria-hidden="true" onclick="addtofvrt3()"></i>
+                        <i class="fa fa-heart addedtofvrtq" aria-hidden="true" onclick="addedtofvrt3()"></i> <br>
+                        <singer-name>Selena Gomez</singer-name>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="q-ele">04
+                        <img src="images/hindi4-awaara.jpg">
+                        <song-name>Awaara</song-name>
+                        <i class="fa fa-heart-o addtofvrtq" aria-hidden="true" onclick="addtofvrt4()"></i>
+                        <i class="fa fa-heart addedtofvrtq" aria-hidden="true" onclick="addedtofvrt4()"></i> <br>
+                        <singer-name>Badshah</singer-name>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="q-ele">05
+                        <img src="images/hindi2-nayan.jpg">
+                        <song-name>Nayan</song-name>
+                        <i class="fa fa-heart-o addtofvrtq" aria-hidden="true" onclick="addtofvrt5()"></i>
+                        <i class="fa fa-heart addedtofvrtq" aria-hidden="true" onclick="addedtofvrt5()"></i> <br>
+                        <singer-name>Dhvani Bhanushali</singer-name>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="q-ele">06
+                        <img src="images/hindi7-punyapaap.jpg">
+                        <song-name>Punyapaap</song-name>
+                        <i class="fa fa-heart-o addtofvrtq" aria-hidden="true" onclick="addtofvrt6()"></i>
+                        <i class="fa fa-heart addedtofvrtq" aria-hidden="true" onclick="addedtofvrt6()"></i> <br>
+                        <singer-name>Divine</singer-name>
+                    </td>
+                </tr><br>
+                <tr>
+                    <td class="q-ele">07
+                        <img src="images/gnat-eminem.jpg">
+                        <song-name>Gnat</song-name> 
+                        <i class="fa fa-heart-o addtofvrtq" aria-hidden="true" onclick="addtofvrt7()"></i>
+                        <i class="fa fa-heart addedtofvrtq" aria-hidden="true" onclick="addedtofvrt7()"></i><br>
+                        <singer-name>Eminem</singer-name>
+                        </td><br>
+                </tr>
+                <tr>
+                    <td class="q-ele">08
+                        <img src="images/eng7-talkmeout.jpg">
+                        <song-name>Talk Me...</song-name>
+                        <i class="fa fa-heart-o addtofvrtq" aria-hidden="true" onclick="addtofvrt8()"></i>
+                        <i class="fa fa-heart addedtofvrtq" aria-hidden="true" onclick="addedtofvrt8()"></i> <br>
+                        <singer-name>Olivia Holt</singer-name>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="q-ele">09
+                        <img src="images/hindi5-bahotroye.jpg">
+                        <song-name>Bahot Roye</song-name>
+                        <i class="fa fa-heart-o addtofvrtq" aria-hidden="true" onclick="addtofvrt9()"></i>
+                        <i class="fa fa-heart addedtofvrtq" aria-hidden="true" onclick="addedtofvrt9()"></i> <br>
+                        <singer-name>Payal Dev</singer-name>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="q-ele">10
+                        <img src="images/imaginedragon.jpg">
+                        <song-name>Believer</song-name>
+                        <i class="fa fa-heart-o addtofvrtq" aria-hidden="true" onclick="addtofvrt10()"></i>
+                        <i class="fa fa-heart addedtofvrtq" aria-hidden="true" onclick="addedtofvrt10()"></i> <br>
+                        <singer-name>Imagine Dragon</singer-name>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="q-ele">11
+                        <img src="images/hindi1-aatishbaazi.jpg">
+                        <song-name>Aatishbaazi</song-name> 
+                        <i class="fa fa-heart-o addtofvrtq" aria-hidden="true" onclick="addtofvrt11()"></i>
+                        <i class="fa fa-heart addedtofvrtq" aria-hidden="true" onclick="addedtofvrt11()"></i><br>
+                        <singer-name>Jubin Nautiyal</singer-name>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="q-ele">12
+                        <img src="images/eng4-savagelove.jpg">
+                        <song-name>Savage Love</song-name>
+                        <i class="fa fa-heart-o addtofvrtq" aria-hidden="true" onclick="addtofvrt12()"></i>
+                        <i class="fa fa-heart addedtofvrtq" aria-hidden="true" onclick="addedtofvrt12()"></i> <br>
+                        <singer-name>Jason Derulo</singer-name>
+                    </td>
+                </tr>
+            </table>
+    
+        </div>
+    </aside>
+    <!-- aside section ends here -->
+<!-- menu section for small devices -->
+<div id="menuOpen">
+    <div>Profile <i class="fa fa-user" aria-hidden="true"></i></div>
+    <div>Notifications <i class="fa fa-bell " aria-hidden="true" title="Notifications"></i></div>
+    <div>Favourites <i class="fa fa-heart " aria-hidden="true" ></i></i></div>
+    <div>Search <i class="fa fa-search icon " aria-hidden="true"></i></div>
+    <div onclick="recentlyPlayed()">Recently Played</div>
+    <a href="index.html"><div>Home Screen</div></a>
+    <div onclick="menuClose()">Close Menu</div>
+</div>
+    <!-- misc -->
+
+    <audio id="current-song"> <source src="songs/welcometojungle.mp3" id="songSource"> </audio>
+        <audio src="songs/Lowlife_poppy.mp3" id="current-song-2"></audio>
+        <script src="scripts/script.js"></script>
+</body>
+</html>

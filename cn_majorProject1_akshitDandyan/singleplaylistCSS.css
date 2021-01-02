@@ -1,0 +1,8 @@
+/* ***SINGLE PLAYLIST SCREEN MEDIA QUERIES ****/
+@media (max-width:1240px){
+    aside{display: none;width: 80%;background:transparent;width: 60%;left: 0px;}
+    #currentPlaylist,#tracks {width: 96%;left: 2%;}
+    .currentPlaylistBtn{height: auto;width:auto;font-size: 12px;padding: 5px;font-weight: normal;margin-top: -10px;}
+    .menu{display:block;z-index: 10;right: 30px;}
+    #fvrt,#searchsongs,.mic,.bell,.dp,.search,.singleP{display: none !important;}
+}

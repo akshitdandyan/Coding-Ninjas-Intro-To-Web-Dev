@@ -1,0 +1,645 @@
+/* header part and bottom musicplayer of both homescreen and singleplaylist screen has same css */
+html, body{
+    width: 100%;
+    height: 100%;
+    padding: 0;margin: 0;
+    background:rgb(13, 13, 46);
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation-name: anim;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+/* header */
+#header{position: fixed;width: 100%;z-index: 10;background: linear-gradient(45deg,rgb(16, 16, 57),rgb(91, 39, 88));height: 18vh;}
+#logo{
+    width: 16vw;
+    height: 7vw;
+    margin: 40px;
+    z-index: 2;
+}
+.menu{color: white;font-size: 70px;position: absolute;right: 20px;top: 35%;display: none;}
+#menuOpen{
+    position: fixed;
+    top: 50px;
+    right: 0px;
+    width: 40%;
+    background-color: white;
+    height: auto;
+    z-index: 20;
+    display: none;
+}
+#menuOpen div{
+    height: 40px;
+    border: 2px grey solid;
+    color: white;
+    background: linear-gradient(45deg,rgb(80, 38, 81),rgb(6, 56, 78));
+    font-size: 15px;font-family: arial;font-weight: bold;
+}
+#menuOpen div i{position: absolute;right: 4px;}
+#fvrt{
+    color: white;
+    font-family:Arial, Helvetica, sans-serif;
+    position: absolute;left: 22%;top: 90px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.singleP{position: absolute;left: 22%;top: 115px;transition: 0.3s;cursor: pointer;}
+#fvrt:hover{transform: scale(1.4);}
+.singleP:hover{transform: scale(1.2);}
+#searchsongs{
+    width: 25vw;height: 30px;
+    border-radius: 30px;
+    background-color: rgb(60, 60, 214);
+    border: none;
+    border-color: transparent;
+    outline: none;
+    position: absolute;
+    right: 15%;
+    top: 60px;
+    padding-left: 40px;
+    color: white;
+}
+#searchsongs:hover{box-shadow: 0px 0px 5px 1px rgb(103, 190, 243);}
+.icon{
+    position: absolute;
+    z-index: 1;
+    color: white;
+}
+.search{ top: 67px;right: 41%;}
+.mic{top: 67px;right: 17%;}
+.bell{top: 67px;right: 11%;}
+.dp{
+    position: absolute;
+    top: 40px;
+    right: 2%;
+    border-radius: 50%;
+    width: 6%;
+    height: 6vw;
+}
+/* current music info and controls */
+#bottom-music-player{
+    background-color: rgb(51, 50, 50);
+    position: fixed;
+    bottom: 0;
+    height: 80px;
+    width: 100%;
+    z-index: 5;
+}
+.song-info{
+    /* border: 2px solid blue; */
+    width: 40%;
+    height: 80%;
+    position: relative;
+    left: 10%;top: 30%;
+}
+.current-song-poster img{
+    width: 30px;
+    height: 30px;
+}
+.song-name, .singer-name{
+    color: white;
+    position: absolute;
+    margin-left: 20px;
+}
+.singer-name{top: 20px;}
+.song-info-icon{
+    color: white;
+    margin-left: 10px;
+}
+.song-controls{
+    position: absolute;
+    left: 30%;top: 6%;
+    width: 40%;
+    display: flex;justify-content: space-around;
+}
+.song-controls i{
+    color: white;
+    font-size: 2vw;
+    padding: 10px;
+}
+#pauseP{
+    display: none;
+}
+#playP{
+    margin-left: 1.2vw;
+}
+.slider{
+    -webkit-appearance: none;
+    height: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.5;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+}
+.slider:hover {
+    opacity: 1;
+}
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background: #056c09;
+    cursor: pointer;
+}
+#songSlider{
+    width: 30vw;
+    position: absolute;
+    left: 35%;
+    bottom: 15%;
+    color: white;
+    font-family: arial;
+    display: inline;
+}
+d1,d2{color: white; font-size: 16px;font-family: arial;}
+d1{position: absolute;left: 30%;bottom: 10%;}
+d2{position: absolute;right: 30%;bottom: 10%;}
+.audio-controls{
+    position: absolute;
+    right: 0px;
+    top: 25%;
+    color: white;
+    width: 20%;
+}
+#audioSlider{width: 30%;}
+.audio-controls i{margin-right: 5px;}
+/* temporary */
+#temp{height: 20vh;}
+/* trending song recommendations */
+/* ********************************************************************************************************* */
+/* ***********************************CSS FOR HOME SCREEN STARTS HERE************************************* */
+/* ***************************************************************************************************** */
+#trending-container{
+    height: 20vh;
+    width: 55vw;
+    position: relative;
+    left: 15vw;
+}
+.front{
+    width: 40%;
+    height: 160px;
+    position: absolute;
+    left: 30%;
+    z-index: 1;
+    box-shadow: 0px 0px 5px 2px white;
+}
+.behind{
+    width: 40%;
+    height: 120px;
+    position: absolute;
+    top: 20px;
+}
+#trending-image-2{position: absolute;right: 0;}
+/* trending image animation */
+#trending-image-1{
+    animation-name: image-1;
+    animation-iteration-count: infinite;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 3s;
+}
+@keyframes image-1{
+0%{
+    left: 30%;
+    box-shadow: none;
+}
+50%{
+    z-index: 0;
+    left: 60%;
+    top: 20px;
+    width: 40%;
+    height: 120px;
+}
+75%{
+    left: 0%;
+    top: 20px;
+    width: 40%;
+    height: 120px;
+    z-index: 0;
+}
+100%{
+    width: 40%;
+    height: 160px;
+    position: absolute;
+    left: 30%;
+    z-index: 1;
+    box-shadow: 0px 0px 5px 2px white;
+}
+}
+#trending-image-2{
+    animation-name: image-2;
+    animation-iteration-count: infinite;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 3s;
+}
+@keyframes image-2{
+    0%{
+    z-index: 0;
+    left: 60%;
+    top: 20px;
+    width: 40%;
+    height: 120px;
+}
+50%{
+    left: 0%;
+    top: 20px;
+    width: 40%;
+    height: 120px;
+    z-index: 0;
+}
+75%{
+    width: 40%;
+    height: 160px;
+    position: absolute;
+    left: 30%;
+    top: 0;
+    z-index: 1;
+    box-shadow: 0px 0px 5px 2px white;
+}
+100%{
+    z-index: 0;
+    left: 60%;
+    top: 20px;
+    width: 40%;
+    height: 120px;
+}
+}
+#trending-image-3{
+    animation-name: image-3;
+    animation-iteration-count: infinite;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 3s;
+}
+@keyframes image-3{
+0%{
+    left: 0%;
+    top: 20px;
+    width: 40%;
+    height: 120px;
+    z-index: 1;
+}
+50%{
+    z-index: 1;
+    width: 40%;
+    height: 160px;
+    position: absolute;
+    left: 30%;
+    top: 0;
+    box-shadow: 0px 0px 5px 2px white;
+}
+75%{
+    z-index: 0;
+    left: 60%;
+    top: 20px;
+    width: 40%;
+    height: 120px;
+}
+100%{
+    left: 0%;
+    top: 20px;
+    width: 40%;
+    height: 120px;
+    z-index: 0;
+}
+}
+/* queue */
+#queue{
+    height: 60vh;
+    width: 20vw;
+    position: fixed;
+    right: 4%;top: 20vh;
+    overflow-y:scroll ;
+}
+#queue::-webkit-scrollbar{display: none;}
+#playList{color: teal;position: absolute;top: 5px;right: 4px;font-family: arial;cursor: pointer;}
+#playlistDropdown{font-family: arial;color: grey;height: 30px;width: 90px;border: 2px black solid;position: absolute;top: 48px;right: 4px;z-index: 40;display: none;}
+#playlistDropdown div{padding: 4px;height: 14px;border-bottom: 1px grey solid;background-color: white;width: 100%;}
+.q-ele{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+}
+.q-ele img{
+    width: 30px;height: 30px;
+    margin-bottom: -20px;
+}
+singer-name{
+    margin-left: 70px;
+    color: gray;
+    font-size: 12px;
+}
+song-name{
+    margin-left: 12px;
+    font-size: 15px;
+}
+table{
+    margin-top: -40px;
+}
+.addtofvrtq, .addedtofvrtq{
+    position: absolute;
+    right: 10px;
+}
+.addedtofvrtq{
+    display: none;
+}
+/* latest releases */
+#latestReleases{
+    width: 55vw;
+    height: 32vh;
+    position: relative;
+    left: 15vw;top: 40px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+#LR_heading{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 15vw;
+    margin-top: 1vw;
+}
+.LRs{
+    color: white;
+    font-family: arial;
+    position: relative;
+    width: 40%;height: 80px;
+    margin-bottom: 30px;
+}
+.LRs p{margin-top: -70px;margin-left: 94px;}
+.LRs i{font-size: 20px;}
+.dateofrelease{
+    color: gray;margin-bottom: 110px;margin-left: 94px;
+    font-size: 10px;
+    position: relative;bottom: 42px;
+}
+.LRs img{
+    width: 90px;
+    height: 80px;
+    border-radius: 10px;
+}
+moreoptions{
+    position: absolute;
+    top: 0px;right: 0px;
+}
+moreoptions songLength{
+    color: gray;
+    font-size: 15px;
+}
+.LRsDropdown{color :white;width: 50%;height: 100%;position: absolute;right: 0px;top: 20px;display: none;z-index: 10;}
+.LRsDropdown div{width: 100%;height: 25%;border-radius: 10px;border: 1px solid white;background-color: black;padding: 5px;}
+#popularArtists{
+    position: relative;
+    left: 15vw;
+    height: 17vh;
+    width: 55vw;
+    margin-top: 80px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+#popularImages{
+    display: flex;
+    justify-content: space-around;
+}
+#popularImages span{justify-content: center;text-align: center;}
+#popularImages span img{
+    margin-top: 10px;
+    width: 6vw;
+    height: 6vw;
+    border-radius: 50%;
+}
+.popularNames {
+    font-size: 15px;
+    font-weight: normal;
+    margin-left: 5px;
+}
+/* stations */
+#stations{
+    position: relative;
+    left: 15vw;
+    height: 15vh;
+    width: 55vw;
+    margin-top: 30px;
+    background-color: rgb(16, 20, 74);
+}
+#stations span img{
+    width:6vw;
+    height: 6vw;
+    border-radius: 50%;
+    margin-right:1vw ;
+}
+#stationImg{height: 7vw;width: 10vw;position: relative;top: 6px;}
+/* categories */
+#vibe{
+    width: 55vw;
+    position: relative;
+    left: 15vw;
+    height: auto;
+    display: flex;flex-wrap: wrap;justify-content: space-around;
+}
+#vibe div{width: 22vw;height: 200px;background-size: cover;border-radius: 10px;margin: 12px;text-align: center;transition: 0.5s;}
+#vibe div:hover{filter: brightness(30%);}
+#vibe div h5{margin-top: 90px;-webkit-text-stroke: rgb(235, 223, 223) 1px;color: black;font-weight: bolder;}
+/* latest english and hindi */
+.latest{
+    width: 55vw;
+    position: relative;
+    left: 15vw;
+    height: 14vh;
+    margin-top: 1cm;
+}
+h5{
+    margin: 0px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+.latest span img{
+    width: 7vw;
+    height: 6vw;
+}
+.latest span p1,p2{
+    font-family: arial;
+    font-size: 14px;
+    margin: 0px;
+    color: white;
+    display: block;
+}
+.latest span p2{color: grey;font-size: 12px;}
+.latest-container{
+    display: flex;overflow-x: scroll;
+}
+.latest-container::-webkit-scrollbar{display: none;}
+.latest-container span{
+    margin-right:32px ;
+}
+.latestMoreIcon{
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    top: 40%;
+    right: 0%;
+    margin-right: -20px;
+}
+/* footer */
+#footer{
+    text-align: center;
+    margin-top: 60px;
+    height: 150px;
+}
+#footer a{
+    font-size: 40px;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: darkgray;
+}
+#footer a:hover{color: rgb(196, 89, 39);}
+
+/* *************************************************************************** */
+/* *****************CSS FOR SINGLEPLAYLIST SCREEN STARTS HERE***************** */
+/* **************************************************************************** */
+
+#currentPlaylist{
+    background: rgb(15, 33, 71);
+    height: 38vh;
+    width: 55vw;
+    position: relative;
+    left: 15vw;
+    color: white;
+}
+#currentPlaylistImage:hover{filter: brightness(80%);}
+#currentPlaylistImage{
+    width: 100%;
+    height: 100%;
+    filter: brightness(20%);transition: 0.2s;
+}
+#aboutCurrentPlaylist{
+    width: 100%;
+    height: 70%;
+    position: absolute;
+    bottom: 0px;
+    background: linear-gradient(transparent,rgb(16, 71, 71));
+    overflow-y: scroll;
+}
+#aboutCurrentPlaylist::-webkit-scrollbar{display: none;}
+currentPlayListName{
+    position: relative;
+    top: 50px;left: 5px;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: arial;
+}
+origin{
+    position: absolute;
+    top: 80px;
+    left: 5px;
+    font-family: arial;
+}
+brief{
+    text-align: left;
+    position: absolute;
+    top: 110px;left: 5px;
+    font-family: arial;
+}
+follower{
+    font-family: arial;
+    color: rgb(211, 12, 12);
+    border-radius: 30px;
+    border: 1px red solid;
+    padding: 3px;
+    position: absolute;right: 15px;top: 15px;
+    background-color: rgb(241, 239, 238);
+    box-shadow: -1px -1px 12px 1px red;
+}
+#playAll{
+    position: absolute;right: 15px;top: 105px;
+    width: 140px;
+    padding: 10px;
+    color: white;
+    background: linear-gradient(45deg,purple,blue);
+    font-family: arial;
+    font-weight: bolder;
+    outline: none;
+    border: 1px solid blue;
+    box-shadow: -1px -1px 12px 1px blue;
+}
+work{
+    color: black;
+    background-color: white;
+    padding: 10px;
+    border-radius: 20px;
+    position: absolute;
+    top: 55px;right: 15px;
+}
+/* tracks */
+#tracks{
+    width: 55vw;
+    position: relative;
+    left: 15vw;top: 40px;
+    height: 135vh;
+}
+#tracks div{
+    height: 6%;
+    background: #132c5d;
+    margin-top: 1.5vh;
+    position: relative;
+}
+.trackSrNo{color: white;position: relative;bottom: 15px;font-family: arial;font-weight: bold;left: 2px;}
+.trackImage{width: 20%;}
+.trackImage img{
+    width: 50px;
+    height: 50px;
+    margin-top: 1%;
+    margin-left: 5px;
+}
+.trackInfo{
+    color: white;
+    position: absolute;
+    margin-left: 10px;
+}
+.trackInfo p{margin: 0px;position: relative;}
+.trackName{font-weight: bold;font-family: arial;top: 15px;}
+.trackSinger{font-family: arial;color: grey;font-size: small;top: 20px;}
+.addToQIcons{
+    position:absolute;
+    right: 20px;top: 40%;
+    color: white;
+}
+.addToQIcons i{margin-right: 10px;}
+aside{
+    position: absolute;
+    right: 5%;
+    width: 20vw;
+    height: 150vh;
+    top: 20vh;
+}
+#similarArtists{
+    position: relative;
+    height: 25%;
+}
+#recentlyPlayed{
+    position: relative;
+    height: 58%;
+    top: 40px;
+}
+sa{font-family: arial;font-size: x-large;color: white;font-weight: bolder;}
+viewall{font-family: arial;font-size: small;color: grey;position: absolute;right: 10px;top: 10px;}
+.simArt{
+    position: relative;
+    height: 25%;
+    margin-top: 5%;
+}
+.simArt img{width: 70px;width: 70px;border-radius: 20px;}
+.simArt span p3,p4{color: white;position: absolute;left: 76px;margin-top: 10px;font-weight: bold;font-family: Arial, Helvetica, sans-serif;}
+.simArt span p4{color: grey;font-weight: normal;top: 30px;}
+.fa{color: white;}
+#RP{margin-top: 10px;}

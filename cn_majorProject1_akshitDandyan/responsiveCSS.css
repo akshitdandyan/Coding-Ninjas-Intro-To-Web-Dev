@@ -1,0 +1,52 @@
+/* ***HOME SCREEN MEDIA QUERIES ****/
+/* tab */
+@media (max-width:940px){
+    #trending-container{left: 0vw;}
+    #queue{right: 0px;width: 35vw;}
+    #latestReleases{left: 0px;height: 22vh;}
+    #LR_heading{margin: 0px;}
+    #popularArtists{left:0px;margin-top: 80px;height: 26vh;}#popularArtists div{margin-top: 20px;}
+    #popularImages{display: flex;flex-wrap: wrap;justify-content: space-around;}
+    #popularImages span{margin: 8px;}
+    #stations{left:0px;margin-top: 20px;height: 150px;display: flex;flex-wrap: wrap;justify-content: space-around;}
+    #stations span img{margin-right: 4px;margin-left: 4px;width: 70px;height: 70px;}
+    #vibe{left: 0px;}
+    .latest{left: 0px;margin-top: 10px;}
+    .song-info{left: 0px;}
+    .song-controls{left: 34%;}
+    .audio-controls i{font-size: 20px;} #audioSlider{width: 90%;}
+    .song-name, .singer-name{margin-left: 5px;}
+    .LRsDropdown div{width: 200%;margin-right: 80px;}
+}
+/* mobile */
+@media (max-width:550px) and (max-height:880px){
+    #logo{width: 40vw;height: 18vw;margin-top: 45px;margin-left: 0px;}
+    .menu{display:block;z-index: 10;right: 30px;}
+    #fvrt,#searchsongs,.mic,.bell,.dp,.search,.singleP{display: none !important;}
+    #queue{display: none;}
+    #queue{background-color: black;width: 100%;z-index: 50;}
+    #trending-container,#latestReleases,#popularArtists,#stations,#vibe,.latest{width: 100%;}
+    #LR_heading{margin-top: 70px;}
+    #latestReleases{height: 28vh;}
+    .LRs{margin-top: 10px;}
+    .LRs img{width: 60px;height: 60px;}
+    .LRs p{font-size: 17px;margin:0px;}
+    #popularArtists{margin-top: 80px;}
+    #popularImages span img{height: 16vw;width: 16vw;margin-left: 10px;margin-right: 10px;}
+    #stations{display: flex;height: 20vh;flex-wrap: wrap;justify-content:space-around;margin-top: 120px;}
+    #stationImg{margin-right: 10px;margin-left: 10px;width: 18vw;height: 15vw;}
+    #stations span img{margin-right: 10px;margin-left: 10px;width: 15vw;height: 15vw;}
+    #vibe{height: auto;} #vibe div{width: 80%;}
+    #vibe img{width: 80%;height: 30%;margin: 10%;border-radius: 20px;box-shadow: 4px 4px 10px 3px rgb(35, 34, 34);}
+    .latest span img{width: 17vw;height: 16vw;}
+    .latest{margin-top: 60px;}
+    #footer{height: 200px;}
+    .song-info{left: 0px;}
+    .song-controls i{font-size: 15px;margin-left: 1px;margin-right: 1px;}
+    .audio-controls{width: 25%;top: 30px;}
+    d1,d2{font-size: 12px;margin: 12px;}
+    .audio-controls i{font-size: 10px;} .slider{width: 90%;}
+    .song-name, .singer-name{margin-left: 5px;font-family: arial;margin-top: -5px;font-size: 10px;}.singer-name{color: grey;}
+    .song-info-icon{color: white;margin-left: 4px;}
+    .LRsDropdown div{width: 200%;margin-left: -80px;}
+}
