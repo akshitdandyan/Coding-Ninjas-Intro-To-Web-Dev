@@ -1,0 +1,27 @@
+<!-- I have added some images , clipart etc. to make this project more interactive! -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Move The Ball</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img src="media/images/goal.png" id="goalleft" class="goal">
+    <img src="media/images/goal.png" id="goalright" class="goal">
+    <div id="ball"></div>
+    <button onclick="resetPosition()">Reset Ball Position (Esc)</button>
+<!-- ------------- -->
+
+
+<!--controls for mobile size -->
+<div id="forMobile"><img src="media/images/bgrotate.jpg"></div>
+<button class="cntrlbtn" id="down" onmousedown="up()">🔼</button>
+<button class="cntrlbtn" id="up" onmousedown="down()">🔽</button>
+<button class="cntrlbtn" id="right" onmousedown="left()">▶</button>
+<button class="cntrlbtn" id="left" onmousedown="right()">◀</button>
+    <!-- Javascript file -->
+    <script src="script.js"></script>
+</body>
+</html>
