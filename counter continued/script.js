@@ -10,14 +10,17 @@ var ns1=document.getElementsByClassName("sec")[1];
 var np0=document.getElementsByClassName("pri")[0];
 var ns0=document.getElementsByClassName("sec")[0];
 function startCounter(){
-    var interval = setInterval(animate, 1000);
-}
-function animate(){
+    n4i=1;
+    var interval = setInterval(
+function (){
     var result =(np0.innerHTML+np1.innerHTML+np2.innerHTML+np3.innerHTML+ns4.textContent);
     var inp=document.getElementById("input").value;
     (parseInt(result),parseInt(inp));
+    if(inp<1 || inp>99999){window.alert("Out of range")}
     if(parseInt(inp)==parseInt(result) || parseInt(inp)==99999){
-        console.log("Stopped here!")
+        window.alert("Counter has  stopped!");
+        console.log("Stopped here!");
+        clearInterval(interval);
         return;
     }
 
@@ -34,10 +37,6 @@ function animate(){
         ns4.classList.remove("animate");
     }, 500);
     n4i++;
-    if(parseInt(inp)==parseInt(result) || parseInt(inp)==99999){
-        console.log("Stopped here2222!")
-        return;
-    }
 // last second div
 
     if(ns4.innerHTML==9){
@@ -108,4 +107,5 @@ function animate(){
     
 
 
+}, 1000);
 }
