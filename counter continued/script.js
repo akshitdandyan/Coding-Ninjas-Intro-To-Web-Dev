@@ -21,8 +21,7 @@ function (){
         window.alert("Counter has  stopped!");
         console.log("Stopped here!");
         clearInterval(interval);
-        np0.innerHTML=0;np1.innerHTML=0;np2.innerHTML=0;np3.innerHTML=0;np4.innerHTML=0;ns4.innerHTML=0;
-        n4i=parseInt(0);n3i=parseInt(0);n2i=parseInt(0);n1i=parseInt(0);n0i=parseInt(0);
+        window.location.reload();
     }
 
 // last div
