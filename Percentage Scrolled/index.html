@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percentage Scrolled</title>
+    <style>
+            body{
+                margin: 0px;padding: 0px;text-align: center;
+            }
+            #perScrolled{
+                width: 150px;
+                height: 20px;
+                color: green;
+                font-family: arial;
+                background-color: whitesmoke;
+                border: greenyellow 2px solid;
+                border-radius: 20px;
+                text-align: center;
+                box-shadow: 0px 0px 15px 5px grey;
+                position: fixed;
+                right: 5px;
+                top: 5px;
+                z-index: 1;
+            }
+            header{
+                width: 80%;
+                height: auto;
+                position: relative;
+                left: 10%;
+                margin-top: 50px;
+                color: rgb(82, 84, 88);
+                font-size: 1.5rem;
+            }
+            #images{
+                position: relative;
+                left: 10%;
+                width: 80%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+            h1{
+                color: rgb(76, 133, 240);
+                font-weight: bold;
+                font-family: Arial, Helvetica, sans-serif;
+                text-transform: uppercase;
+                margin: 50px 0px;
+            }
+    </style>
+</head>
+<body>
+    <div id="perScrolled">0% Viewed</div>
+    <header>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Ipsam, ad aspernatur quam beatae provident dolor officiis dolores
+        deserunt molestiae est quisquam. Perspiciatis provident nemo odit
+        et ad facilis placeat quidem!Lorem Lorem ipsum, dolor sit amet 
+        consectetur adipisicing elit. Nisi ipsum impedit eum vero! Maxime
+        fuga perspiciatis accusamus sint adipisci ab, sapiente earum esse
+        ut pariatur dolores quidem rem voluptatibus iusto. lorem
+    </header>
+    <h1>Image Gallery</h1>
+    <div id="images">
+        <img src="images/image1.png">
+        <img src="images/image2.png">
+        <img src="images/image1.png">
+        <img src="images/image2.png">
+        <img src="images/image1.png">
+        <img src="images/image2.png">
+        <img src="images/image1.png">
+        <img src="images/image2.png">
+        <img src="images/image1.png">
+        <img src="images/image2.png">
+        <img src="images/image1.png">
+        <img src="images/image2.png">
+    </div>
+
+    <script>
+        function veiwed()
+    {
+        var heightOfWindow = window.innerHeight;
+		var contentScrolled = window.pageYOffset;
+		var bodyHeight = document.body.offsetHeight;
+        var show=document.getElementById("perScrolled");
+		var totalPer = bodyHeight - heightOfWindow;
+		var scrolledPer = contentScrolled;
+        var percent = parseInt((scrolledPer/totalPer) * 98);  //When it was scrolled to bottom, it showed 102% instead of 100%,so to overcome this bug, I replaced *100 by *98
+        show.innerHTML= percent + "% Viewed";
+    }
+        window.addEventListener('scroll', veiwed)
+    </script>
+</body>
+</html>
