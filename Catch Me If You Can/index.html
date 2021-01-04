@@ -6,26 +6,27 @@
     <title>Catch Me If You Can</title>
     <style>
         #item{
-            width: 6vw;
-            height: 5vw;
+            width: 8vw;
+            height: 8vw;
             background-color: blueviolet;
             text-align: center;
             color: white;
             position: absolute;
+            font-size:1.5vw;
         }
-        p{margin-top: 2vw;}
+        p{margin-top: 3vw;}
     </style>
 </head>
 <body>
     <div id="item" onmouseover="changePosition()"><p>Catch Me</p></div>
     <script>
       function changePosition(){
-        i=Math.floor(Math.random()*90);
-        j=Math.floor(Math.random()*90);
+        i=Math.floor(Math.random()*85);
+        j=Math.floor(Math.random()*85);
         var item=document.getElementById("item");
         item.style.top=i+"vh";
         item.style.left=j+"vw";
-        console.log("hi")
+        console.log("Position Changed");
       }
     </script>
 </body>
