@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ping Pong Game</title>
+</head>
+<style>
+     .p{
+        width: 24vw;
+        height: 4vh;
+        border-radius: 20px;
+        text-align: center;
+        color: white;
+        font-family: arial;
+        position: absolute;
+        transition: 0.05s;
+     }
+     #p1{
+         top: 0px;
+         margin-left: 40vw;
+         background-color: red;
+     }
+     #p2{bottom: 0px;
+     margin-left: 40vw;
+     background-color: blue;
+     }
+     #ball{
+         height: 5vh;
+         width: 5vh;
+         border-radius: 50%;
+         background-color: green;
+         position: absolute;
+         left: 49vw;
+         top: 4vh;
+         transition: 2s all;
+         transition-timing-function: linear;
+     }
+     /*controlling buttons for mobile size */
+     .btn{
+         background: black;
+         color: white;
+         font-family: arial;
+         font-size: 20px;
+         margin-top: 45vh;
+         position: absolute;
+         display: none;
+     }
+     #btn2{
+         right: 4px;
+     }
+     #start{
+         margin-top: 45vh;
+         margin-left: 40vw;
+     }
+     @media (max-width:540px){
+         .btn{display: inline;}
+     }
+     
+</style>
+<body>
+          <div class="p" id="p1">p1</div>
+          <div class="p" id="p2">p2</div>    
+          <div id="ball"></div>
+          <button id="start" class="btn" onclick="startGame()">Start</button>
+          <button class="btn" onclick="left()">Left</button>
+          <button class="btn" id="btn2" onclick="right()">Right</button>
+          <script src="script.js"></script>
+</body>
+</html>
